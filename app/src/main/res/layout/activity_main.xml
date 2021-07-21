@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="mainActivity"
+            type="com.example.emotiondiary.MainActivity" />
+
+        <import type="android.view.View"/>
+        <variable name="notWrite" type="java.lang.Boolean"/>
+        <variable name="Write" type="java.lang.Boolean" />
+        <variable name="showAll" type="java.lang.Boolean" />
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <LinearLayout
+            android:layout_marginTop="50dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+      <TextView
+          android:onClick="@{() -> mainActivity.btnSetOnclick()}"
+          android:id="@+id/today_emotion"
+          android:background="@drawable/maintextback"
+          android:layout_marginTop="30dp"
+          android:layout_marginLeft="40dp"
+          android:textStyle="bold"
+          android:fontFamily="@font/notosanskrlight"
+          android:textSize="15dp"
+          android:textColor="@color/black"
+          android:text="today"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/month_emotion"
+                android:background="@drawable/mainbacky"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="40dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/notosanskrlight"
+                android:textSize="15dp"
+                android:textColor="@color/black"
+                android:text="month"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <ImageView
+                android:id="@+id/write_Img"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="60dp"
+                android:src="@drawable/pencil"
+                android:layout_width="40dp"
+                android:layout_height="40dp"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/title_text"
+            android:textStyle="bold"
+            android:fontFamily="@font/notosanskrlight"
+            android:layout_margin="40dp"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:text="today emotion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/emotion_recyclerview"
+            android:visibility="@{showAll ? View.GONE : View.VISIBLE, default = gone}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:visibility="@{notWrite ? View.GONE : View.VISIBLE, default = visible}"
+            android:id="@+id/enrollment_text"
+            android:layout_marginLeft="40dp"
+            android:layout_marginBottom="20dp"
+            android:textSize="15dp"
+            android:fontFamily="@font/notosanskrlight"
+            android:text="아직 오늘의 감정을 등록하지 않으셨어요.. \n 오늘의 감정을 기록해보는것도 좋은방법이에요"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <RelativeLayout
+            android:visibility="@{Write ? View.GONE : View.VISIBLE, default = gone}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:backgroundTint="#778899"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="30dp"
+                android:background="@drawable/ch_img_background"
+                android:elevation="25dp"
+                android:id="@+id/emotion_image"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="15dp"
+                android:src="@drawable/fun"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:contentDescription="TODO" />
+
+            <TextView
+                android:id="@+id/emotion_text"
+                android:layout_alignTop="@id/emotion_image"
+                android:textStyle="italic"
+                android:fontFamily="@font/notosanskrlight"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                android:layout_toRightOf="@id/emotion_image"
+                android:text="@string/emotion_happy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/diary_text"
+            android:textStyle="bold"
+            android:fontFamily="@font/notosanskrlight"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginBottom="25dp"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:text="today diary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:visibility="@{showAll ? View.GONE : View.VISIBLE,default = gone}"
+            android:id="@+id/month_diary_recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:textSize="15dp"
+            android:visibility="@{notWrite ? View.GONE : View.VISIBLE, default = visible}"
+            android:id="@+id/enrollment_text2"
+            android:layout_margin="40dp"
+            android:fontFamily="@font/notosanskrlight"
+            android:text="아직 오늘의 감정일기를 등록하지 않으셨어요.. \n 오늘의 감정을 기록해보는것도 좋은방법이에요"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:visibility="@{Write ? View.GONE : View.VISIBLE, default = gone}"
+            android:layout_marginLeft="40dp"
+            android:id="@+id/date_text"
+            android:fontFamily="@font/notosanskrlight"
+            android:text="Date/month/day"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <ScrollView
+            android:visibility="@{Write ? View.GONE : View.VISIBLE, default = gone}"
+            android:scrollbars="none"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:layout_width="match_parent"
+            android:layout_height="200dp">
+
+            <TextView
+                android:textStyle="bold"
+                android:fontFamily="@font/notosanskrlight"
+                android:text="오늘은 밥을 먹었다 밥을 먹었더니 맛있었다 그리고 냐미냐미했다 그런데 오늘따라 허리가 아파서 병원을 갔다가 왔어요!"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </ScrollView>
+    </LinearLayout>
+</layout>

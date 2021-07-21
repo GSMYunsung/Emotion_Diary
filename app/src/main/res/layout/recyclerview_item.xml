@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:backgroundTint="#778899"
+        android:layout_margin="20dp"
+        android:elevation="20dp"
+        android:background="@drawable/ch_img_background"
+        android:id="@+id/image"
+        android:src="@drawable/fun"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:contentDescription="TODO" />
+
+    <TextView
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="30dp"
+        android:layout_toRightOf="@id/image"
+        android:textColor="@color/black"
+        android:fontFamily="@font/notosanskrlight"
+        android:textSize="20dp"
+        android:text="오늘따라 좋은날"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+</RelativeLayout>
