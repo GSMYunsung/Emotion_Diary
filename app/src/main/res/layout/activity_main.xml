@@ -10,12 +10,14 @@
             type="com.example.emotiondiary.MainActivity" />
 
         <import type="android.view.View"/>
-        <variable name="notWrite" type="java.lang.Boolean"/>
-        <variable name="Write" type="java.lang.Boolean" />
-        <variable name="showAll" type="java.lang.Boolean" />
+
+        <variable
+            name="ViewModel"
+            type="com.example.emotiondiary.viewmodel.Viewmodel" />
     </data>
 
     <LinearLayout
+        android:background="@color/white"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -28,7 +30,7 @@
 
 
       <TextView
-          android:onClick="@{() -> mainActivity.btnSetOnclick()}"
+          android:onClick="@{() -> mainActivity.todayBtnClick()}"
           android:id="@+id/today_emotion"
           android:background="@drawable/maintextback"
           android:layout_marginTop="30dp"
@@ -42,6 +44,7 @@
           android:layout_height="wrap_content"/>
 
             <TextView
+                android:onClick="@{() -> mainActivity.monthBtnClick()}"
                 android:id="@+id/month_emotion"
                 android:background="@drawable/mainbacky"
                 android:layout_marginTop="30dp"
@@ -76,13 +79,15 @@
             android:layout_height="wrap_content"/>
 
         <androidx.recyclerview.widget.RecyclerView
+            android:background="@color/black"
             android:id="@+id/emotion_recyclerview"
-            android:visibility="@{showAll ? View.GONE : View.VISIBLE, default = gone}"
+            android:visibility="@{ViewModel.visBoolean ? View.GONE : View.VISIBLE, default = gone}"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
         <TextView
-            android:visibility="@{notWrite ? View.GONE : View.VISIBLE, default = visible}"
+            android:textColor="@color/black"
+            android:visibility="@{ViewModel.visBoolean ? View.VISIBLE : View.GONE, default = visible}"
             android:id="@+id/enrollment_text"
             android:layout_marginLeft="40dp"
             android:layout_marginBottom="20dp"
@@ -93,7 +98,7 @@
             android:layout_height="wrap_content"/>
 
         <RelativeLayout
-            android:visibility="@{Write ? View.GONE : View.VISIBLE, default = gone}"
+            android:visibility="@{ViewModel.visBoolean ? View.VISIBLE : View.GONE, default = gone}"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -139,14 +144,16 @@
             android:layout_height="wrap_content"/>
 
         <androidx.recyclerview.widget.RecyclerView
-            android:visibility="@{showAll ? View.GONE : View.VISIBLE,default = gone}"
+            android:background="@color/black"
+            android:visibility="@{ViewModel.visBoolean ? View.GONE : View.VISIBLE,default = gone}"
             android:id="@+id/month_diary_recyclerview"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
         <TextView
+            android:textColor="@color/black"
             android:textSize="15dp"
-            android:visibility="@{notWrite ? View.GONE : View.VISIBLE, default = visible}"
+            android:visibility="@{ViewModel.visBoolean ? View.VISIBLE : View.GONE, default = visible}"
             android:id="@+id/enrollment_text2"
             android:layout_margin="40dp"
             android:fontFamily="@font/notosanskrlight"
@@ -154,30 +161,35 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
-        <TextView
-            android:visibility="@{Write ? View.GONE : View.VISIBLE, default = gone}"
-            android:layout_marginLeft="40dp"
-            android:id="@+id/date_text"
-            android:fontFamily="@font/notosanskrlight"
-            android:text="Date/month/day"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-        <ScrollView
-            android:visibility="@{Write ? View.GONE : View.VISIBLE, default = gone}"
-            android:scrollbars="none"
-            android:layout_marginLeft="40dp"
-            android:layout_marginRight="40dp"
-            android:layout_width="match_parent"
-            android:layout_height="200dp">
 
             <TextView
-                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:visibility="@{ViewModel.visBoolean ? View.VISIBLE : View.GONE, default = gone}"
+                android:layout_marginLeft="40dp"
+                android:id="@+id/date_text"
                 android:fontFamily="@font/notosanskrlight"
-                android:text="오늘은 밥을 먹었다 밥을 먹었더니 맛있었다 그리고 냐미냐미했다 그런데 오늘따라 허리가 아파서 병원을 갔다가 왔어요!"
-                android:layout_width="match_parent"
+                android:text="Date/month/day"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
-        </ScrollView>
-    </LinearLayout>
+            <ScrollView
+                android:visibility="@{ViewModel.visBoolean ? View.VISIBLE : View.GONE, default = gone}"
+                android:scrollbars="none"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_width="match_parent"
+                android:layout_height="200dp">
+
+                <TextView
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/notosanskrlight"
+                    android:text="오늘은 밥을 먹었다 밥을 먹었더니 맛있었다 그리고 냐미냐미했다 그런데 오늘따라 허리가 아파서 병원을 갔다가 왔어요!"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+            </ScrollView>
+
+        </LinearLayout>
+
 </layout>

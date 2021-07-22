@@ -1,19 +1,36 @@
 package com.example.emotiondiary.viewmodel
 
 import android.app.Application
-import androidx.lifecycle.AndroidViewModel
-import androidx.lifecycle.MutableLiveData
+import android.util.Log
+import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.*
+import com.example.emotiondiary.R
+import com.example.emotiondiary.databinding.ActivityMainBinding
 import com.example.emotiondiary.room.Entitys
 import com.example.emotiondiary.room.RoomAppDB
 
-class Viewmodel(app : Application) : AndroidViewModel(app) {
+class Viewmodel(application: Application) : AndroidViewModel(application) {
 
-    private var allEmotion : MutableLiveData<List<Entitys>> = MutableLiveData()
-    private var todayEmotion : MutableLiveData<List<Entitys>>
+    private var allEmotion : MutableLiveData<List<Entitys>>
+
+    //Room에 값이 들어가 있는지 아닌지 판단
+    private val _isValue = MutableLiveData<Boolean>()
+
+    val isValue : LiveData<Boolean>
+        get() = _isValue
+
+    //가시성 판단
+    private val _visBoolean = MutableLiveData<Boolean>()
+    val visBoolean: MutableLiveData<Boolean>
+        get() = _visBoolean
 
     init {
-        todayEmotion = MutableLiveData()
         allEmotion = MutableLiveData()
+    }
+
+    fun isValue(data : Entitys){
+        if(data.emotionDiary.isEmpty()){
+        }
     }
 
     private fun getTodayEmotion(){
@@ -22,7 +39,6 @@ class Viewmodel(app : Application) : AndroidViewModel(app) {
         val allinEmotion = todayDao?.getAllEmotionInfo()
 
         allEmotion.postValue(allinEmotion)
-        todayEmotion.postValue(todayinEmotion)
     }
 
     fun insertEmotionInfo(entity: Entitys){
@@ -53,4 +69,5 @@ class Viewmodel(app : Application) : AndroidViewModel(app) {
         fun onDeleteUserClickListener(user : Entitys)
         fun onItemClikListener(user: Entitys)
     }
+
 }
