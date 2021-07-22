@@ -30,7 +30,7 @@
 
 
       <TextView
-          android:onClick="@{() -> mainActivity.todayBtnClick()}"
+          android:onClick="@{() -> ViewModel.todayBtnClick()}"
           android:id="@+id/today_emotion"
           android:background="@drawable/maintextback"
           android:layout_marginTop="30dp"
@@ -44,7 +44,7 @@
           android:layout_height="wrap_content"/>
 
             <TextView
-                android:onClick="@{() -> mainActivity.monthBtnClick()}"
+                android:onClick="@{() -> ViewModel.monthBtnClick()}"
                 android:id="@+id/month_emotion"
                 android:background="@drawable/mainbacky"
                 android:layout_marginTop="30dp"
@@ -83,11 +83,11 @@
             android:id="@+id/emotion_recyclerview"
             android:visibility="@{ViewModel.visBoolean ? View.GONE : View.VISIBLE, default = gone}"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="10dp"/>
 
         <TextView
             android:textColor="@color/black"
-            android:visibility="@{ViewModel.visBoolean ? View.VISIBLE : View.GONE, default = visible}"
+            android:visibility="@{ViewModel.visBoolean&amp;ViewModel.isValue==false ? View.VISIBLE : View.GONE, default = visible}"
             android:id="@+id/enrollment_text"
             android:layout_marginLeft="40dp"
             android:layout_marginBottom="20dp"
@@ -98,7 +98,7 @@
             android:layout_height="wrap_content"/>
 
         <RelativeLayout
-            android:visibility="@{ViewModel.visBoolean ? View.VISIBLE : View.GONE, default = gone}"
+            android:visibility="@{ViewModel.visBoolean&amp;ViewModel.isValue==true ? View.VISIBLE : View.GONE, default = gone}"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -148,12 +148,12 @@
             android:visibility="@{ViewModel.visBoolean ? View.GONE : View.VISIBLE,default = gone}"
             android:id="@+id/month_diary_recyclerview"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="10dp"/>
 
         <TextView
             android:textColor="@color/black"
             android:textSize="15dp"
-            android:visibility="@{ViewModel.visBoolean ? View.VISIBLE : View.GONE, default = visible}"
+            android:visibility="@{ViewModel.visBoolean&amp;ViewModel.isValue==false ? View.VISIBLE : View.GONE, default = visible}"
             android:id="@+id/enrollment_text2"
             android:layout_margin="40dp"
             android:fontFamily="@font/notosanskrlight"
@@ -164,7 +164,7 @@
 
             <TextView
                 android:textColor="@color/black"
-                android:visibility="@{ViewModel.visBoolean ? View.VISIBLE : View.GONE, default = gone}"
+                android:visibility="@{ViewModel.visBoolean&amp;ViewModel.isValue==true ? View.VISIBLE : View.GONE, default = gone}"
                 android:layout_marginLeft="40dp"
                 android:id="@+id/date_text"
                 android:fontFamily="@font/notosanskrlight"
@@ -173,7 +173,7 @@
                 android:layout_height="wrap_content"/>
 
             <ScrollView
-                android:visibility="@{ViewModel.visBoolean ? View.VISIBLE : View.GONE, default = gone}"
+                android:visibility="@{ViewModel.visBoolean&amp;ViewModel.isValue==true ? View.VISIBLE : View.GONE, default = gone}"
                 android:scrollbars="none"
                 android:layout_marginLeft="40dp"
                 android:layout_marginRight="40dp"
