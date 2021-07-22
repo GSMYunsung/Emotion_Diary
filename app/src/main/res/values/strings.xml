@@ -3,4 +3,6 @@
     <string name="emotion_happy">"오늘은 슈퍼신나는날!\n 오늘만은 낭만술사! 다비켜!"</string>
     <string name="emotion_angry">"으아 화난다! 오늘은 화나\n 아무도 날 건드리지마!"</string>
     <string name="emotion_sad">"오늘은 폭포수 흘러 넘치는날...\n 아무나 날 위로해주었으면 좋겠어"</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
