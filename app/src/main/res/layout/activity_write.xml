@@ -1,10 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
+    android:background="@color/white"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".WriteActivity">
+
+<TextView
+    android:id="@+id/what_is_today_text"
+    android:layout_marginTop="20dp"
+    android:layout_marginLeft="20dp"
+    android:textSize="25dp"
+    android:textStyle="bold"
+    android:fontFamily="@font/notosanskrlight"
+    android:text="오늘의 감정은 무엇인가요?"
+    android:textColor="@color/black"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"/>
+
+    <TextView
+        android:layout_alignLeft="@id/what_is_today_text"
+        android:layout_below="@id/what_is_today_text"
+        android:id="@+id/what_is_today_text2"
+        android:textSize="15dp"
+        android:fontFamily="@font/notosanskrthin"
+        android:text="이곳에서는 나의 감정을 설정해요!"
+        android:textColor="@color/black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <RelativeLayout
+        android:id="@+id/emotion_relative"
+        android:layout_margin="20dp"
+        android:elevation="20dp"
+        android:background="@drawable/ch_img_background"
+        android:layout_below="@id/what_is_today_text2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:backgroundTint="@color/white"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/ch_img_background"
+            android:elevation="25dp"
+            android:layout_marginLeft="20dp"
+            android:id="@+id/emotion_image"
+            android:src="@drawable/fun"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:contentDescription="TODO" />
+
+        <TextView
+            android:textSize="15dp"
+            android:fontFamily="@font/notosanskrlight"
+            android:layout_marginTop="18dp"
+            android:layout_marginLeft="20dp"
+            android:layout_alignTop="@id/emotion_image"
+            android:layout_toRightOf="@id/emotion_image"
+            android:textColor="@color/black"
+            android:text="@string/emotion_happy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </RelativeLayout>
+
+    <Button
+        android:layout_margin="20dp"
+        android:backgroundTint="#808080"
+        android:background="@drawable/ch_img_background"
+        android:fontFamily="@font/notosanskrlight"
+        android:textStyle="bold"
+        android:layout_alignParentBottom="true"
+        android:text="다음"
+        android:textSize="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 
 </RelativeLayout>

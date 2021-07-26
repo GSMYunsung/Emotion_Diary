@@ -25,21 +25,36 @@ class Viewmodel(application: Application) : AndroidViewModel(application) {
     val isValue : MutableLiveData<Boolean>
         get() = _isValue
 
+    private val _isTodayMonthE = MutableLiveData<String>()
+    val isTodayMonthE : MutableLiveData<String>
+        get() = _isTodayMonthE
+
+    private val _isTodayMonthD = MutableLiveData<String>()
+    val isTodayMonthD : MutableLiveData<String>
+        get() = _isTodayMonthD
+
     init {
         allEmotion = MutableLiveData()
+        _visBoolean.value = true
         _isValue.value = true
+        _isTodayMonthE.value = "Today emotion"
+        _isTodayMonthD.value = "Today diary"
     }
 
     fun isValue(data : Entitys){
         if(data.emotionDiary.isEmpty()){
         }
     }
+
     fun todayBtnClick() {
             _visBoolean.value = true
-//        startActivity(Intent(this,WriteActivity::class.java))
+            _isTodayMonthE.value = "Today emotion"
+            _isTodayMonthD.value = "Today diary"
     }
     fun monthBtnClick(){
             _visBoolean.value = false
+            _isTodayMonthD.value = "Month emotion"
+            _isTodayMonthE.value = "Month diary"
     }
 
     private fun getTodayEmotion(){

@@ -58,6 +58,7 @@
                 android:layout_height="wrap_content"/>
 
             <ImageView
+                android:onClick="@{() -> mainActivity.writeDiary()}"
                 android:id="@+id/write_Img"
                 android:layout_gravity="center_vertical"
                 android:layout_marginLeft="60dp"
@@ -69,14 +70,14 @@
 
         <TextView
             android:id="@+id/title_text"
-            android:textStyle="bold"
-            android:fontFamily="@font/notosanskrlight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_margin="40dp"
+            android:fontFamily="@font/notosanskrlight"
+            android:text="@{ViewModel.isTodayMonthE()}"
             android:textColor="@color/black"
             android:textSize="20dp"
-            android:text="today emotion"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:textStyle="bold" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:background="@color/black"
@@ -139,7 +140,7 @@
             android:layout_marginBottom="25dp"
             android:textColor="@color/black"
             android:textSize="20dp"
-            android:text="today diary"
+            android:text="@{ViewModel.isTodayMonthD()}"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
