@@ -13,7 +13,6 @@ import com.example.emotiondiary.room.RoomAppDB
 class Viewmodel(application: Application) : AndroidViewModel(application) {
 
     private var allEmotion : MutableLiveData<List<Entitys>>
-    private lateinit var binding: ActivityMainBinding
 
     //UI 가시성
     private val _visBoolean = MutableLiveData<Boolean>()
