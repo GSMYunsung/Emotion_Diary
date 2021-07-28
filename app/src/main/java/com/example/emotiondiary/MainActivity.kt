@@ -1,11 +1,8 @@
 package com.example.emotiondiary
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.emotiondiary.databinding.ActivityMainBinding
 import com.example.emotiondiary.viewmodel.Viewmodel
@@ -20,7 +17,7 @@ class MainActivity : AppCompatActivity() {
 
         val viewmodel = ViewModelProvider(this).get(Viewmodel::class.java)
 
-        binding = DataBindingUtil.setContentView(this,R.layout.activity_main)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
 
         binding.apply {
@@ -32,6 +29,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun writeDiary(){
-        startActivity(Intent(this,WriteActivity::class.java))
+
     }
 }
