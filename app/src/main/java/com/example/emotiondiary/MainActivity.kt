@@ -20,6 +20,7 @@ class MainActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
 
+        //이곳에서 메인엑티비티의 뷰모델과 메인 엑티비티의 라이프사이클을 관리한다.
         binding.apply {
             lifecycleOwner = this@MainActivity
             binding.mainActivity = this@MainActivity
