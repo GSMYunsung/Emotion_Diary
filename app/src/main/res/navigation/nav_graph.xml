@@ -2,12 +2,13 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/nav_graph">
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/emotionFragment">
 
     <fragment
         android:id="@+id/emotionFragment"
         android:name="com.example.emotiondiary.Fragment.WriteFragment"
-        android:label="Blank"
+        android:label=""
         tools:layout="@layout/fragment_write" >
         <action
             android:id="@+id/action_emotionFragment_to_diaryFragment"
@@ -17,7 +18,7 @@
     <fragment
         android:id="@+id/diaryFragment"
         android:name="com.example.emotiondiary.Fragment.WriteDiaryFragment"
-        android:label="Blank"
+        android:label=""
         tools:layout="@layout/fragment_write_diary" />
 
 </navigation>

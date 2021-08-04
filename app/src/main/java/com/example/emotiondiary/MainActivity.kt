@@ -1,9 +1,11 @@
 package com.example.emotiondiary
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
+import com.example.emotiondiary.Fragment.WriteDiaryFragment
 import com.example.emotiondiary.databinding.ActivityMainBinding
 import com.example.emotiondiary.viewmodel.Viewmodel
 
@@ -30,6 +32,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun writeDiary(){
-
+        startActivity(Intent(this,WriteActivity::class.java))
     }
 }
