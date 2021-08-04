@@ -67,11 +67,28 @@
             android:layout_height="wrap_content"/>
 
         <EditText
+            android:textSize="20dp"
+            android:layout_marginBottom="20dp"
+            android:textColorHint="#808080"
+            android:hint="이곳에 제목을 입력하세요"
             android:layout_marginRight="20dp"
             android:layout_alignLeft="@id/emotion_image"
+            android:id="@+id/title_edit"
             android:layout_below="@id/emotion_image"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
+
+        <EditText
+            android:textSize="15dp"
+            android:gravity="top"
+            android:textColorHint="#808080"
+            android:hint="이곳에 일기를 입력하세요"
+            android:layout_marginBottom="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_alignLeft="@id/emotion_image"
+            android:layout_below="@id/title_edit"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
 
     </RelativeLayout>
 
