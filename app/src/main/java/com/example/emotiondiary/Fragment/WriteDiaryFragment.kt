@@ -17,7 +17,6 @@ class WriteDiaryFragment : Fragment() {
     ): View? {
         val view: View = inflater!!.inflate(R.layout.fragment_write_diary, container, false)
 
-
         view.findViewById<Button>(R.id.next_btn2).setOnClickListener {
             getActivity()?.finish()
         }

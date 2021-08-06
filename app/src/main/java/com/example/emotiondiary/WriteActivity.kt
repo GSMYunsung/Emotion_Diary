@@ -30,13 +30,5 @@ class WriteActivity : AppCompatActivity() {
         val navHostFragment=supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         navController = navHostFragment.findNavController()
 
-        binding2.apply {
-            lifecycleOwner = this@WriteActivity
-        }
-
-        binding2.nextBtn2.setOnClickListener {
-            finish()
-        }
-
     }
     }
