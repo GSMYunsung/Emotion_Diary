@@ -14,11 +14,14 @@ import com.example.emotiondiary.Fragment.WriteDiaryFragment
 import com.example.emotiondiary.Fragment.WriteFragment
 import com.example.emotiondiary.Fragment.WriteFragmentDirections
 import com.example.emotiondiary.databinding.ActivityWriteBinding
+import com.example.emotiondiary.databinding.FragmentWriteBinding
+import com.example.emotiondiary.databinding.FragmentWriteDiaryBinding
 
 class WriteActivity : AppCompatActivity() {
 
     lateinit var navController : NavController
     private val binding by lazy { ActivityWriteBinding.inflate(layoutInflater) }
+    private val binding2 by lazy { FragmentWriteDiaryBinding.inflate(layoutInflater) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,5 +29,14 @@ class WriteActivity : AppCompatActivity() {
 
         val navHostFragment=supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         navController = navHostFragment.findNavController()
+
+        binding2.apply {
+            lifecycleOwner = this@WriteActivity
+        }
+
+        binding2.nextBtn2.setOnClickListener {
+            finish()
+        }
+
     }
     }
