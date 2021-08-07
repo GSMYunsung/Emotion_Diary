@@ -21,7 +21,6 @@ class WriteActivity : AppCompatActivity() {
 
     lateinit var navController : NavController
     private val binding by lazy { ActivityWriteBinding.inflate(layoutInflater) }
-    private val binding2 by lazy { FragmentWriteDiaryBinding.inflate(layoutInflater) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

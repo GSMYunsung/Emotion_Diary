@@ -21,6 +21,14 @@ class WriteDiaryFragment : Fragment() {
             getActivity()?.finish()
         }
 
+        view.findViewById<Button>(R.id.back_btn).setOnClickListener {
+            view.findNavController().navigate(R.id.action_diaryFragment_to_emotionFragment)
+        }
+
+        view.findViewById<Button>(R.id.finish_btn2).setOnClickListener {
+            getActivity()?.finish()
+        }
+
         return view
     }
 }
