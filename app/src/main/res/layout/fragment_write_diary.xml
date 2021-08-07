@@ -9,10 +9,17 @@
         android:background="@color/white"
         tools:context=".Fragment.WriteDiaryFragment">
 
+        <Button
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:id="@+id/finish_btn2"
+            android:background="@drawable/backbtn"
+            android:layout_width="60dp"
+            android:layout_height="60dp"/>
 
         <TextView
+            android:layout_below="@id/finish_btn2"
             android:id="@+id/what_is_today_text"
-            android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp"
             android:textSize="22dp"
             android:textStyle="bold"
@@ -36,7 +43,7 @@
         <RelativeLayout
             android:id="@+id/emotion_relative"
             android:layout_margin="20dp"
-            android:layout_above="@id/next_btn2"
+            android:layout_above="@id/btn_line"
             android:elevation="20dp"
             android:background="@drawable/ch_img_background"
             android:layout_below="@id/what_is_today_text2"
@@ -95,18 +102,47 @@
 
         </RelativeLayout>
 
-        <Button
-            android:id="@+id/next_btn2"
-            android:layout_margin="20dp"
-            android:backgroundTint="#808080"
-            android:background="@drawable/ch_img_background"
-            android:fontFamily="@font/notosanskrlight"
-            android:textStyle="bold"
+        <LinearLayout
+            android:layout_marginBottom="20dp"
+            android:layout_alignLeft="@id/emotion_relative"
+            android:layout_alignRight="@id/emotion_relative"
+            android:id="@+id/btn_line"
+            android:orientation="horizontal"
             android:layout_alignParentBottom="true"
-            android:text="다음"
-            android:textSize="15dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content">
+
+
+            <Button
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:layout_alignRight="@id/emotion_relative"
+                android:id="@+id/back_btn"
+                android:backgroundTint="#808080"
+                android:background="@drawable/ch_img_background"
+                android:fontFamily="@font/notosanskrlight"
+                android:textStyle="bold"
+                android:text="이전"
+                android:textSize="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:layout_alignLeft="@id/emotion_relative"
+                android:id="@+id/next_btn2"
+                android:backgroundTint="#808080"
+                android:background="@drawable/ch_img_background"
+                android:fontFamily="@font/notosanskrlight"
+                android:textStyle="bold"
+                android:text="일기등록"
+                android:textSize="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
 
     </RelativeLayout>
 </layout>
