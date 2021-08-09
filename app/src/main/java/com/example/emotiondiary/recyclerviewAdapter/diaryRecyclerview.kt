@@ -4,15 +4,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.emotiondiary.R
 import com.example.emotiondiary.room.Entitys
 
-class DiaryRecyclerview : RecyclerView.Adapter<DiaryRecyclerview.ViewHolder>() {
+class EmotionRecyclerview: RecyclerView.Adapter<EmotionRecyclerview.ViewHolder>(){
 
     private var todayemotion = ArrayList<Entitys>()
 
-    fun setTodayList(data : ArrayList<Entitys>){
+    fun setmonthList(data : ArrayList<Entitys>){
         this.todayemotion = data
     }
 
@@ -21,17 +22,19 @@ class DiaryRecyclerview : RecyclerView.Adapter<DiaryRecyclerview.ViewHolder>() {
         return ViewHolder(inflate)
     }
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-       holder.monthEmotion(todayemotion[position])
-    }
-
     override fun getItemCount(): Int {
         return todayemotion.size
     }
 
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        holder.monthEmotion(todayemotion[position])
+    }
+
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view){
 
-        private val itemImg = view.findViewById<ImageView>(R.id.item_image)
+        val itemImg = view.findViewById<ImageView>(R.id.month_diary_image)
+        val itemText = view.findViewById<TextView>(R.id.month_diary_text)
+        val itemDate = view.findViewById<TextView>(R.id.month_diary_date)
 
         fun monthEmotion(data : Entitys){
 
@@ -44,6 +47,10 @@ class DiaryRecyclerview : RecyclerView.Adapter<DiaryRecyclerview.ViewHolder>() {
                 "sleep" -> itemImg.setImageResource(R.drawable.sleep)
                 "whistle" -> itemImg.setImageResource(R.drawable.whistle)
             }
+
+            itemText.text = data.title
+            itemDate.text = data.date
+
 
         }
     }
