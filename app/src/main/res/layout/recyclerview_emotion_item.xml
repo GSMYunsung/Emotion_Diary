@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
+    android:background="@color/white"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content">
@@ -14,5 +15,16 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:contentDescription="TODO" />
+
+    <TextView
+        android:id="@+id/item_text"
+        android:fontFamily="@font/notosanskrmedium"
+        android:layout_below="@id/item_image"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/black"
+        android:text="yy/mm/dd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
 
 </RelativeLayout>
