@@ -6,7 +6,7 @@
     android:layout_height="wrap_content">
 
     <ImageView
-        android:backgroundTint="#655"
+        android:backgroundTint="#6554"
         android:layout_margin="20dp"
         android:elevation="20dp"
         android:background="@drawable/ch_img_background"
