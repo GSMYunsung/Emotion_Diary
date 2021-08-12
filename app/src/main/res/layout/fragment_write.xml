@@ -10,8 +10,8 @@
         <import type="android.view.View"/>
 
         <variable
-            name="ViewModel"
-            type="com.example.emotiondiary.viewmodel.Viewmodel" />
+            name="WriteFragment"
+            type="com.example.emotiondiary.WriteActivity" />
     </data>
 
     <RelativeLayout
@@ -31,7 +31,7 @@
             android:layout_below="@+id/finish_btn"
             android:id="@+id/what_is_today_text"
             android:layout_marginLeft="20dp"
-            android:textSize="25dp"
+            android:textSize="20dp"
             android:textStyle="bold"
             android:fontFamily="@font/notosanskrlight"
             android:text="오늘의 감정은 무엇인가요?"
@@ -43,7 +43,7 @@
             android:layout_alignLeft="@id/what_is_today_text"
             android:layout_below="@id/what_is_today_text"
             android:id="@+id/what_is_today_text2"
-            android:textSize="15dp"
+            android:textSize="13dp"
             android:fontFamily="@font/notosanskrthin"
             android:text="이곳에서는 나의 감정을 설정해요!"
             android:textColor="@color/black"
@@ -52,7 +52,9 @@
 
         <RelativeLayout
             android:id="@+id/emotion_relative"
-            android:layout_margin="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
             android:elevation="20dp"
             android:background="@drawable/ch_img_background"
             android:layout_below="@id/what_is_today_text2"
@@ -64,7 +66,7 @@
                 android:layout_marginTop="30dp"
                 android:layout_marginBottom="30dp"
                 android:background="@drawable/ch_img_background"
-                android:elevation="25dp"
+                android:elevation="10dp"
                 android:layout_marginLeft="20dp"
                 android:id="@+id/emotion_image"
                 android:src="@drawable/fun"
@@ -83,6 +85,220 @@
                 android:text="@string/emotion_happy"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_alignLeft="@id/emotion_relative"
+            android:layout_alignRight="@id/emotion_relative"
+            android:background="@drawable/ch_img_background"
+            android:layout_below="@id/emotion_relative"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/color_bundle"
+                android:layout_alignTop="@id/choose_cute_emotion_image"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@id/choose_cute_emotion_image"
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:background="@color/purple_200"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"/>
+
+                <ImageView
+                    android:layout_marginLeft="20dp"
+                    android:background="@color/teal_200"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"/>
+
+                <ImageView
+                    android:elevation="5dp"
+                    android:layout_marginLeft="20dp"
+                    android:background="@color/white"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"/>
+
+                <ImageView
+                    android:elevation="5dp"
+                    android:layout_marginLeft="20dp"
+                    android:background="@color/orange"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"/>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/color_bundle2"
+                android:layout_alignTop="@id/choose_dizzy_emotion_image"
+                android:layout_below="@id/color_bundle"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@id/choose_cute_emotion_image"
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:background="@color/lemon"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"/>
+
+                <ImageView
+                    android:layout_marginLeft="20dp"
+                    android:background="@color/light_blue"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"/>
+
+                <ImageView
+                    android:elevation="5dp"
+                    android:layout_marginLeft="20dp"
+                    android:background="@color/pink"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"/>
+
+                <ImageView
+                    android:elevation="5dp"
+                    android:layout_marginLeft="20dp"
+                    android:background="@color/grapefruit"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"/>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_alignTop="@id/choose_fun_emotion_image"
+                android:layout_below="@id/color_bundle2"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@id/choose_cute_emotion_image"
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:background="@color/light_green"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"/>
+
+                <ImageView
+                    android:layout_marginLeft="20dp"
+                    android:background="@color/dark_gray"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"/>
+
+                <ImageView
+                    android:elevation="5dp"
+                    android:layout_marginLeft="20dp"
+                    android:background="@color/ivory"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"/>
+
+                <ImageView
+                    android:elevation="5dp"
+                    android:layout_marginLeft="20dp"
+                    android:background="@color/green"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"/>
+
+
+            </LinearLayout>
+
+            <ImageView
+                android:onClick="@{(v) -> WriteFragment.changeBackground(v)}"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="@color/white"
+                android:background="@drawable/ch_img_background"
+                android:elevation="10dp"
+                android:id="@+id/choose_angry_emotion_image"
+                android:src="@drawable/angry"
+                android:layout_width="50dp"
+                android:layout_height="50dp" />
+
+            <ImageView
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="20dp"
+                android:layout_below="@id/choose_angry_emotion_image"
+                android:backgroundTint="@color/white"
+                android:background="@drawable/ch_img_background"
+                android:elevation="10dp"
+                android:id="@+id/choose_cute_emotion_image"
+                android:src="@drawable/cute"
+                android:layout_width="50dp"
+                android:layout_height="50dp"/>
+
+            <ImageView
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="20dp"
+                android:layout_below="@id/choose_cute_emotion_image"
+                android:backgroundTint="@color/white"
+                android:background="@drawable/ch_img_background"
+                android:elevation="10dp"
+                android:id="@+id/choose_dizzy_emotion_image"
+                android:src="@drawable/dizzy"
+                android:layout_width="50dp"
+                android:layout_height="50dp" />
+            <ImageView
+                android:layout_marginLeft="5dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_below="@id/choose_dizzy_emotion_image"
+                android:backgroundTint="@color/white"
+                android:background="@drawable/ch_img_background"
+                android:elevation="10dp"
+                android:id="@+id/choose_fun_emotion_image"
+                android:src="@drawable/fun"
+                android:layout_width="50dp"
+                android:layout_height="50dp" />
+            <ImageView
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@id/choose_angry_emotion_image"
+                android:backgroundTint="@color/white"
+                android:background="@drawable/ch_img_background"
+                android:elevation="10dp"
+                android:layout_marginLeft="20dp"
+                android:id="@+id/choose_looksly_emotion_image"
+                android:src="@drawable/looksly"
+                android:layout_width="50dp"
+                android:layout_height="50dp" />
+            <ImageView
+                android:layout_alignTop="@id/choose_looksly_emotion_image"
+                android:layout_toRightOf="@id/choose_looksly_emotion_image"
+                android:backgroundTint="@color/white"
+                android:background="@drawable/ch_img_background"
+                android:elevation="10dp"
+                android:layout_marginLeft="20dp"
+                android:id="@+id/choose_sad_emotion_image"
+                android:src="@drawable/sad"
+                android:layout_width="50dp"
+                android:layout_height="50dp"/>
+            <ImageView
+                android:layout_alignTop="@id/choose_looksly_emotion_image"
+                android:layout_toRightOf="@id/choose_sad_emotion_image"
+                android:backgroundTint="@color/white"
+                android:background="@drawable/ch_img_background"
+                android:elevation="10dp"
+                android:layout_marginLeft="20dp"
+                android:id="@+id/choose_sleep_emotion_image"
+                android:src="@drawable/sleep"
+                android:layout_width="50dp"
+                android:layout_height="50dp" />
+
+            <ImageView
+                android:layout_alignTop="@id/choose_sleep_emotion_image"
+                android:layout_toRightOf="@id/choose_sleep_emotion_image"
+                android:backgroundTint="@color/white"
+                android:background="@drawable/ch_img_background"
+                android:elevation="10dp"
+                android:layout_marginLeft="20dp"
+                android:id="@+id/choose_whistle_emotion_image"
+                android:src="@drawable/whistle"
+                android:layout_width="50dp"
+                android:layout_height="50dp" />
 
         </RelativeLayout>
 
