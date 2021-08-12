@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageView
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
@@ -20,7 +21,6 @@ import com.example.emotiondiary.databinding.FragmentWriteBinding
 class WriteFragment : Fragment() {
 
     lateinit var navController : NavController
-    private lateinit var binding: FragmentWriteBinding
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
