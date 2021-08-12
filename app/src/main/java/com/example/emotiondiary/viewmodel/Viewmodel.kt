@@ -2,6 +2,7 @@ package com.example.emotiondiary.viewmodel
 
 import android.app.Application
 import android.util.Log
+import android.view.View
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.*
 import com.example.emotiondiary.R
@@ -54,6 +55,9 @@ class Viewmodel(application: Application) : AndroidViewModel(application) {
             _visBoolean.value = false
             _isTodayMonthD.value = "Month emotion"
             _isTodayMonthE.value = "Month diary"
+    }
+
+    fun monthBtnCliasdfck(){
     }
 
     private fun getTodayEmotion(){

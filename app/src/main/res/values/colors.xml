@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <color name="orange">#FFBC42</color>
+    <color name="lemon">#E3E36A</color>
+    <color name="light_blue">#D4DFE6</color>
+    <color name="pink">#fab1ce</color>
+    <color name="grapefruit">#AAABD3</color>
+    <color name="light_green">#cff0da</color>
+    <color name="dark_gray">#5e5e5f</color>
+    <color name="ivory">#f8ecc9</color>
+    <color name="green">#cff09e</color>
+    <color name="gray">#c9d6de</color>
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
     <color name="purple_700">#FF3700B3</color>
