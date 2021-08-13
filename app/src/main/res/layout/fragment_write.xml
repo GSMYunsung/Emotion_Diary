@@ -75,6 +75,7 @@
                 android:contentDescription="TODO" />
 
             <TextView
+                android:id="@+id/emotion_text"
                 android:textSize="15dp"
                 android:fontFamily="@font/notosanskrlight"
                 android:layout_marginTop="18dp"
@@ -208,7 +209,7 @@
             </LinearLayout>
 
             <ImageView
-                android:onClick="@{(v) -> WriteFragment.changeBackground(v)}"
+                android:onClick="changeBackground"
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="10dp"
                 android:backgroundTint="@color/white"
@@ -220,6 +221,7 @@
                 android:layout_height="50dp" />
 
             <ImageView
+                android:onClick="changeBackground"
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="20dp"
                 android:layout_below="@id/choose_angry_emotion_image"
@@ -232,6 +234,7 @@
                 android:layout_height="50dp"/>
 
             <ImageView
+                android:onClick="changeBackground"
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="20dp"
                 android:layout_below="@id/choose_cute_emotion_image"
@@ -243,6 +246,7 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp" />
             <ImageView
+                android:onClick="changeBackground"
                 android:layout_marginLeft="5dp"
                 android:layout_marginBottom="20dp"
                 android:layout_marginTop="20dp"
@@ -255,6 +259,7 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp" />
             <ImageView
+                android:onClick="changeBackground"
                 android:layout_marginTop="10dp"
                 android:layout_toRightOf="@id/choose_angry_emotion_image"
                 android:backgroundTint="@color/white"
@@ -266,6 +271,7 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp" />
             <ImageView
+                android:onClick="changeBackground"
                 android:layout_alignTop="@id/choose_looksly_emotion_image"
                 android:layout_toRightOf="@id/choose_looksly_emotion_image"
                 android:backgroundTint="@color/white"
@@ -277,6 +283,7 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"/>
             <ImageView
+                android:onClick="changeBackground"
                 android:layout_alignTop="@id/choose_looksly_emotion_image"
                 android:layout_toRightOf="@id/choose_sad_emotion_image"
                 android:backgroundTint="@color/white"
@@ -289,6 +296,7 @@
                 android:layout_height="50dp" />
 
             <ImageView
+                android:onClick="changeBackground"
                 android:layout_alignTop="@id/choose_sleep_emotion_image"
                 android:layout_toRightOf="@id/choose_sleep_emotion_image"
                 android:backgroundTint="@color/white"
