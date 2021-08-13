@@ -1,8 +1,13 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="ExtraTranslation">
     <string name="app_name">emotionDiary</string>
     <string name="emotion_happy">"오늘은 슈퍼신나는날!\n 오늘만은 낭만술사! 다비켜!"</string>
     <string name="emotion_angry">"으아 화난다! 오늘은 화나\n 아무도 날 건드리지마!"</string>
-    <string name="emotion_sad">"오늘은 폭포수 흘러 넘치는날...\n 아무나 날 위로해주었으면 좋겠어"</string>
+    <string name="emotion_dizzy">"어지러워... \n 오늘은 어지럽게 돌아가는하루!"</string>
+    <string name="emotion_sad">"오늘은 폭포수 흘러 넘치는날...\n 아무나 날 위로해줘!"</string>
+    <string name="emotion_looksly">"오늘은 예리했던날이라구! \n 내눈은 못속이지"</string>
+    <string name="emotion_whistle">"오늘은 딴청피웠던날 \n 난몰라 난몰라~"</string>
+    <string name="emotion_sleep">"오늘은 졸려.. \n 빨리 자고싶어... 음냐음냐"</string>
+    <string name="emotion_cute">"오늘만은 귀요미! \n 1더하기 1은 귀요미 귀귀요미!"</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
