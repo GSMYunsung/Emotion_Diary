@@ -1,11 +1,14 @@
 package com.example.emotiondiary
 
+import android.content.res.ColorStateList
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.FragmentManager
@@ -72,6 +75,72 @@ class WriteActivity : AppCompatActivity() {
             R.id.choose_sleep_emotion_image ->{
                 findViewById<ImageView>(R.id.emotion_image).setImageResource(R.drawable.sleep)
                 findViewById<TextView>(R.id.emotion_text).text = getString(R.string.emotion_sleep)
+            }
+        }
+    }
+
+    fun changeColor(v : View){
+
+        when(v.id){
+            R.id.purple -> {
+                findViewById<ImageView>(R.id.emotion_image).backgroundTintList =
+                    ColorStateList.valueOf(
+                    ContextCompat.getColor(this, R.color.purple_200))
+            }
+            R.id.gray ->{
+                findViewById<ImageView>(R.id.emotion_image).backgroundTintList =
+                    ColorStateList.valueOf(
+                        ContextCompat.getColor(this, R.color.gray))
+            }
+            R.id.lemon ->{
+                findViewById<ImageView>(R.id.emotion_image).backgroundTintList =
+                    ColorStateList.valueOf(
+                        ContextCompat.getColor(this, R.color.lemon))
+            }
+            R.id.ivory ->{
+                findViewById<ImageView>(R.id.emotion_image).backgroundTintList =
+                    ColorStateList.valueOf(
+                        ContextCompat.getColor(this, R.color.ivory))
+            }
+            R.id.green ->{
+                findViewById<ImageView>(R.id.emotion_image).backgroundTintList =
+                    ColorStateList.valueOf(
+                        ContextCompat.getColor(this, R.color.green))
+            }
+            R.id.lightgreen ->{
+                findViewById<ImageView>(R.id.emotion_image).backgroundTintList =
+                    ColorStateList.valueOf(
+                        ContextCompat.getColor(this, R.color.light_green))
+            }
+            R.id.mint ->{
+                findViewById<ImageView>(R.id.emotion_image).backgroundTintList =
+                    ColorStateList.valueOf(
+                        ContextCompat.getColor(this, R.color.teal_200))
+            }
+            R.id.grapefruit ->{
+                findViewById<ImageView>(R.id.emotion_image).backgroundTintList =
+                    ColorStateList.valueOf(
+                        ContextCompat.getColor(this, R.color.grapefruit))
+            }
+            R.id.orange ->{
+                findViewById<ImageView>(R.id.emotion_image).backgroundTintList =
+                    ColorStateList.valueOf(
+                        ContextCompat.getColor(this, R.color.orange))
+            }
+            R.id.white ->{
+                findViewById<ImageView>(R.id.emotion_image).backgroundTintList =
+                    ColorStateList.valueOf(
+                        ContextCompat.getColor(this, R.color.white))
+            }
+            R.id.pink ->{
+                findViewById<ImageView>(R.id.emotion_image).backgroundTintList =
+                    ColorStateList.valueOf(
+                        ContextCompat.getColor(this, R.color.pink))
+            }
+            R.id.darkgray ->{
+                findViewById<ImageView>(R.id.emotion_image).backgroundTintList =
+                    ColorStateList.valueOf(
+                        ContextCompat.getColor(this, R.color.dark_gray))
             }
         }
     }

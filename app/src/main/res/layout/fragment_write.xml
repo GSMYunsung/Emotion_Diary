@@ -106,17 +106,23 @@
                 android:layout_height="wrap_content">
 
                 <ImageView
+                    android:onClick="changeColor"
+                    android:id="@+id/purple"
                     android:background="@color/purple_200"
                     android:layout_width="50dp"
                     android:layout_height="50dp"/>
 
                 <ImageView
+                    android:onClick="changeColor"
+                    android:id="@+id/mint"
                     android:layout_marginLeft="20dp"
                     android:background="@color/teal_200"
                     android:layout_width="50dp"
                     android:layout_height="50dp"/>
 
                 <ImageView
+                    android:onClick="changeColor"
+                    android:id="@+id/white"
                     android:elevation="5dp"
                     android:layout_marginLeft="20dp"
                     android:background="@color/white"
@@ -124,6 +130,8 @@
                     android:layout_height="50dp"/>
 
                 <ImageView
+                    android:onClick="changeColor"
+                    android:id="@+id/orange"
                     android:elevation="5dp"
                     android:layout_marginLeft="20dp"
                     android:background="@color/orange"
@@ -144,17 +152,23 @@
                 android:layout_height="wrap_content">
 
                 <ImageView
+                    android:onClick="changeColor"
+                    android:id="@+id/lemon"
                     android:background="@color/lemon"
                     android:layout_width="50dp"
                     android:layout_height="50dp"/>
 
                 <ImageView
+                    android:onClick="changeColor"
+                    android:id="@+id/gray"
                     android:layout_marginLeft="20dp"
                     android:background="@color/light_blue"
                     android:layout_width="50dp"
                     android:layout_height="50dp"/>
 
                 <ImageView
+                    android:onClick="changeColor"
+                    android:id="@+id/pink"
                     android:elevation="5dp"
                     android:layout_marginLeft="20dp"
                     android:background="@color/pink"
@@ -162,6 +176,8 @@
                     android:layout_height="50dp"/>
 
                 <ImageView
+                    android:onClick="changeColor"
+                    android:id="@+id/grapefruit"
                     android:elevation="5dp"
                     android:layout_marginLeft="20dp"
                     android:background="@color/grapefruit"
@@ -172,6 +188,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:onClick="changeColor"
                 android:layout_alignTop="@id/choose_fun_emotion_image"
                 android:layout_below="@id/color_bundle2"
                 android:layout_marginLeft="20dp"
@@ -181,17 +198,23 @@
                 android:layout_height="wrap_content">
 
                 <ImageView
+                    android:onClick="changeColor"
+                    android:id="@+id/lightgreen"
                     android:background="@color/light_green"
                     android:layout_width="50dp"
                     android:layout_height="50dp"/>
 
                 <ImageView
+                    android:onClick="changeColor"
+                    android:id="@+id/darkgray"
                     android:layout_marginLeft="20dp"
                     android:background="@color/dark_gray"
                     android:layout_width="50dp"
                     android:layout_height="50dp"/>
 
                 <ImageView
+                    android:onClick="changeColor"
+                    android:id="@+id/ivory"
                     android:elevation="5dp"
                     android:layout_marginLeft="20dp"
                     android:background="@color/ivory"
@@ -199,6 +222,8 @@
                     android:layout_height="50dp"/>
 
                 <ImageView
+                    android:onClick="changeColor"
+                    android:id="@+id/green"
                     android:elevation="5dp"
                     android:layout_marginLeft="20dp"
                     android:background="@color/green"
