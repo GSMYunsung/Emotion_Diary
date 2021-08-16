@@ -23,6 +23,9 @@
         <action
             android:id="@+id/action_diaryFragment_to_emotionFragment"
             app:destination="@id/emotionFragment" />
+        <argument
+            android:name="color"
+            app:argType="string" />
     </fragment>
 
 </navigation>
