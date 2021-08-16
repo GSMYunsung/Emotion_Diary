@@ -14,6 +14,7 @@ import androidx.navigation.Navigation
 import androidx.navigation.Navigation.findNavController
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.example.emotiondiary.R
 import com.example.emotiondiary.databinding.ActivityMainBinding
 import com.example.emotiondiary.databinding.FragmentWriteBinding
@@ -28,7 +29,9 @@ class WriteFragment : Fragment() {
         val view: View = inflater!!.inflate(R.layout.fragment_write, container, false)
 
         view.findViewById<Button>(R.id.next_btn).setOnClickListener {
-           view.findNavController().navigate(R.id.action_emotionFragment_to_diaryFragment)
+
+            view.findNavController().navigate( WriteFragmentDirections
+                .actionEmotionFragmentToDiaryFragment(color = view.findViewById<ImageView>(R.id.emotion_image).backgroundTintList.toString()))
         }
 
         view.findViewById<Button>(R.id.finish_btn).setOnClickListener {
