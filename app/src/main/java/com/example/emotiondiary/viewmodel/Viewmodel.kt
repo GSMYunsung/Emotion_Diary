@@ -1,8 +1,14 @@
 package com.example.emotiondiary.viewmodel
 
 import android.app.Application
+import android.content.ContentProvider
+import android.content.Context
+import android.graphics.drawable.ColorDrawable
 import android.util.Log
 import android.view.View
+import android.widget.ImageView
+import androidx.core.content.ContentProviderCompat.requireContext
+import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.*
 import com.example.emotiondiary.R
