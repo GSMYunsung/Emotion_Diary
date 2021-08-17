@@ -26,6 +26,10 @@
         <argument
             android:name="color"
             app:argType="string" />
+
+        <argument
+            android:name="emotion"
+            app:argType="string" />
     </fragment>
 
 </navigation>
