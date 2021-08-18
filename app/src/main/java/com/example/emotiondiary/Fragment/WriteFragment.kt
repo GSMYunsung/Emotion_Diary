@@ -61,7 +61,17 @@ class WriteFragment : Fragment() {
     }
 
     private fun emotionCase(): String {
-        return "내일해야함"
+        when((view?.findViewById<ImageView>(R.id.emotion_image1)?.drawable as BitmapDrawable).bitmap){
+            (ContextCompat.getDrawable(requireContext(),R.drawable.whistle) as BitmapDrawable).bitmap -> return "whistle"
+            (ContextCompat.getDrawable(requireContext(),R.drawable.sad) as BitmapDrawable).bitmap -> return "sad"
+            (ContextCompat.getDrawable(requireContext(),R.drawable.`fun`) as BitmapDrawable).bitmap -> return "fun"
+            (ContextCompat.getDrawable(requireContext(),R.drawable.dizzy) as BitmapDrawable).bitmap -> return "dizzy"
+            (ContextCompat.getDrawable(requireContext(),R.drawable.looksly) as BitmapDrawable).bitmap -> return "looksly"
+            (ContextCompat.getDrawable(requireContext(),R.drawable.angry) as BitmapDrawable).bitmap -> return "angry"
+            (ContextCompat.getDrawable(requireContext(),R.drawable.sleep) as BitmapDrawable).bitmap -> return "sleep"
+            (ContextCompat.getDrawable(requireContext(),R.drawable.cute) as BitmapDrawable).bitmap -> return "cute"
+        }
+        return "none"
     }
 
     fun colorCase() : String{
