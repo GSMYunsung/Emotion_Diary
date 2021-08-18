@@ -27,6 +27,7 @@ class WriteDiaryFragment : Fragment() {
         val view: View = inflater!!.inflate(R.layout.fragment_write_diary, container, false)
 
         setColor(view)
+        setBackground(view)
 
         view.findViewById<Button>(R.id.next_btn2).setOnClickListener {
             getActivity()?.finish()
@@ -97,44 +98,43 @@ class WriteDiaryFragment : Fragment() {
     }
     private fun setBackground(v : View){
 
-        when(v.id){
-            R.id.choose_angry_emotion_image -> {
-
+        when(safeArgs.emotion){
+            "angry" -> {
                 v.findViewById<ImageView>(R.id.emotion_image).setImageResource(R.drawable.angry)
                 v.findViewById<TextView>(R.id.emotion_text).text = getString(R.string.emotion_angry)
             }
-            R.id.choose_cute_emotion_image ->{
+            "cute" ->{
 
                 v.findViewById<ImageView>(R.id.emotion_image).setImageResource(R.drawable.cute)
                 v.findViewById<TextView>(R.id.emotion_text).text = getString(R.string.emotion_cute)
             }
-            R.id.choose_sad_emotion_image ->{
+            "sad" ->{
 
                 v.findViewById<ImageView>(R.id.emotion_image).setImageResource(R.drawable.sad)
                 v.findViewById<TextView>(R.id.emotion_text).text = getString(R.string.emotion_sad)
             }
-            R.id.choose_dizzy_emotion_image ->{
+            "dizzy" ->{
 
                 v.findViewById<ImageView>(R.id.emotion_image).setImageResource(R.drawable.dizzy)
                 v.findViewById<TextView>(R.id.emotion_text).text = getString(R.string.emotion_dizzy)
             }
-            R.id.choose_fun_emotion_image ->{
+            "fun" ->{
 
                 v.findViewById<ImageView>(R.id.emotion_image).setImageResource(R.drawable.`fun`)
                 v.findViewById<TextView>(R.id.emotion_text).text = getString(R.string.emotion_happy)
             }
-            R.id.choose_looksly_emotion_image ->{
+            "looksly" ->{
 
-                v.findViewById<ImageView>(R.id.emotion_image1).setImageResource(R.drawable.looksly)
+                v.findViewById<ImageView>(R.id.emotion_image).setImageResource(R.drawable.looksly)
                 v.findViewById<TextView>(R.id.emotion_text).text = getString(R.string.emotion_looksly)
             }
-            R.id.choose_whistle_emotion_image ->{
+            "whistle" ->{
 
-                v.findViewById<ImageView>(R.id.emotion_image1).setImageResource(R.drawable.whistle)
+                v.findViewById<ImageView>(R.id.emotion_image).setImageResource(R.drawable.whistle)
                 v.findViewById<TextView>(R.id.emotion_text).text = getString(R.string.emotion_whistle)
             }
-            R.id.choose_sleep_emotion_image ->{
-                v.findViewById<ImageView>(R.id.emotion_image1).setImageResource(R.drawable.sleep)
+            "sleep" ->{
+                v.findViewById<ImageView>(R.id.emotion_image).setImageResource(R.drawable.sleep)
                 v.findViewById<TextView>(R.id.emotion_text).text = getString(R.string.emotion_sleep)
             }
         }
